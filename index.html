@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metegol — Ivan Bonadeo</title>
+<style>
+  html,body{margin:0;height:100%;background:#0c0c0b;font-family:sans-serif}
+  .load{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem}
+  .load-title{font-family:sans-serif;font-weight:900;font-size:2rem;letter-spacing:-.02em;color:#fff}
+  .load-bar{width:120px;height:2px;background:rgba(114,196,203,.2);overflow:hidden;position:relative}
+  .load-bar::after{content:'';position:absolute;inset:0;background:#3d9fa8;animation:slide 1s ease-in-out infinite}
+  @keyframes slide{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+</style>
+<script>
+  // Detecta si es móvil por ancho de pantalla y/o touch
+  (function(){
+    var isMobile = window.matchMedia("(max-width: 820px)").matches
+                || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    var target = isMobile ? "movil.html" : "desktop.html";
+    window.location.replace(target);
+  })();
+</script>
+</head>
+<body>
+  <div class="load">
+    <div class="load-title">METEGOL</div>
+    <div class="load-bar"></div>
+  </div>
+</body>
+</html>
